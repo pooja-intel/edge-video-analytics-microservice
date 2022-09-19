@@ -1,0 +1,16 @@
+{
+	"type": "GStreamer",
+	"template": [
+		"multifilesrc loop=TRUE stop-index=0 location=/app/test_videos/face-demographics-walking.mp4 name=source",
+		" ! decodebin",
+		" ! gvaclassify model=/app/test_videos/human-pose-estimation-0001/FP32/human-pose-estimation-0001.xml model-proc=/app/test_videos/human-pose-estimation-0001.json device=CPU inference-region=full-frame",
+		" ! gvawatermark",
+		" ! videoconvert ! video/x-raw,format=BGR",
+		" ! gvafpscounter",
+" ! appsink name=destination"
+	],
+	"description": "Human pose detection",
+	"parameters": {
+		"type": "object"
+	}
+}

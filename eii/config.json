@@ -3,11 +3,11 @@
         "cert_type": ["zmq"],
         "source": "gstreamer",
         "source_parameters": {
-            "type": "uri",
-            "uri": "https://github.com/intel-iot-devkit/sample-videos/raw/master/classroom.mp4"
+            "type": "gst",
+            "element":"multifilesrc"
         },
-        "pipeline": "object_detection",
-        "pipeline_version": "person_vehicle_bike",
+        "pipeline": "human_pose",
+        "pipeline_version": "human_pose_estimation",
         "publish_frame": true,
         "model_parameters": {}
     },

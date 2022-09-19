@@ -69,6 +69,8 @@ services:
       - /var/tmp:/var/tmp
       - ./Certificates/EdgeVideoAnalyticsMicroservice:/run/secrets/EdgeVideoAnalyticsMicroservice:ro
       - ./Certificates/rootca/cacert.pem:/run/secrets/rootca/cacert.pem:ro
+      # volume mount test_videos directory for human pose estimation
+      - ../EdgeVideoAnalyticsMicroservice/test_videos:/app/test_videos
       # Following devices under /dev filesystem will be needed based on usecase
       # dri - GPU
       # ion - VPU
